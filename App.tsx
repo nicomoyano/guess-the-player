@@ -44,10 +44,10 @@ export default function App() {
             style={styles.button}
             onPress={() => setShowImage(!showImage)}
           >
-            Revelar
+            <Text style={styles.buttonText}>Revelar</Text>
           </Pressable>
           <Pressable style={styles.button} onPress={handleReset}>
-            Reiniciar
+            <Text style={styles.buttonText}>Reiniciar</Text>
           </Pressable>
         </View>
         <PlayersList handleGuessPlayer={handleGuessPlayer} />
@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     marginTop: 50,
     alignItems: 'center',
+    marginHorizontal: 10,
   },
   buttonsContainer: {
     flexDirection: 'row',
@@ -78,8 +79,10 @@ const styles = StyleSheet.create({
   button: {
     margin: 25,
     backgroundColor: 'black',
-    color: 'white',
     padding: 5,
+  },
+  buttonText: {
+    color: 'white',
   },
   revealContainer: {
     position: 'absolute',
@@ -88,11 +91,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   revealImage: {
-    width: 400,
-    height: 400,
+    width: 200,
+    height: 200,
   },
   revealText: {
-    fontSize: 100,
+    fontSize: 50,
     textAlign: 'center',
   },
 });

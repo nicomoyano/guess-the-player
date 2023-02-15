@@ -53,7 +53,8 @@ const PlayersList = ({ handleGuessPlayer }: Props) => {
 const styles = StyleSheet.create({
   container: {
     marginBottom: 60,
-    width: 800,
+    width: '100%',
+    maxWidth: 800,
   },
   input: {
     borderWidth: 1,

@@ -32,16 +32,16 @@ const GuessedPlayer = ({ player }: Props) => {
         <Text
           style={{
             position: 'absolute',
-            height: '100%',
-            width: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+            height: 50,
+            width: 50,
+            textAlign: 'center',
+            lineHeight: 50,
             color: 'white',
             fontWeight: '900',
             fontSize: 16,
+            borderRadius: 25,
             backgroundColor: 'rgba(0, 0, 0, 0.3)',
-            borderRadius: 50,
+            overflow: 'hidden',
           }}
         >
           {player.country.region.slice(0, 2).toUpperCase()}
@@ -108,13 +108,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    flexWrap: 'wrap',
   },
   text: {
     fontSize: 20,
     color: 'red',
     width: 50,
     textAlign: 'center',
-    // backgroundColor: 'red',
   },
   correctText: {
     color: 'green',
