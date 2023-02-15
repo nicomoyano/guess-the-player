@@ -1,0 +1,492 @@
+[
+  {
+    "id": "10",
+    "name": "Manchester City",
+    "league": "Premier League"
+  },
+  {
+    "id": "243",
+    "name": "Real Madrid",
+    "league": "La Liga"
+  },
+  {
+    "id": "5",
+    "name": "Chelsea",
+    "league": "Premier League"
+  },
+  {
+    "id": "9",
+    "name": "Liverpool",
+    "league": "Premier League"
+  },
+  {
+    "id": "21",
+    "name": "FC Bayern München",
+    "league": "Bundesliga"
+  },
+  {
+    "id": "73",
+    "name": "Paris Saint Germain",
+    "league": "Ligue 1"
+  },
+  {
+    "id": "241",
+    "name": "FC Barcelona",
+    "league": "La Liga"
+  },
+  {
+    "id": "44",
+    "name": "Inter",
+    "league": "Serie A"
+  },
+  {
+    "id": "11",
+    "name": "Manchester United",
+    "league": "Premier League"
+  },
+  {
+    "id": "45",
+    "name": "Juventus",
+    "league": "Serie A"
+  },
+  {
+    "id": "240",
+    "name": "Atlético Madrid",
+    "league": "La Liga"
+  },
+  {
+    "id": "18",
+    "name": "Tottenham Hotspur",
+    "league": "Premier League"
+  },
+  {
+    "id": "22",
+    "name": "Borussia Dortmund",
+    "league": "Bundesliga"
+  },
+  {
+    "id": "112172",
+    "name": "RB Leipzig",
+    "league": "Bundesliga"
+  },
+  {
+    "id": "47",
+    "name": "Milan",
+    "league": "Serie A"
+  },
+  {
+    "id": "481",
+    "name": "Sevilla",
+    "league": "La Liga"
+  },
+  {
+    "id": "1",
+    "name": "Arsenal",
+    "league": "Premier League"
+  },
+  {
+    "id": "32",
+    "name": "Bayer 04 Leverkusen",
+    "league": "Bundesliga"
+  },
+  {
+    "id": "48",
+    "name": "Napoli",
+    "league": "Serie A"
+  },
+  {
+    "id": "52",
+    "name": "Roma",
+    "league": "Serie A"
+  },
+  {
+    "id": "483",
+    "name": "Villarreal",
+    "league": "La Liga"
+  },
+  {
+    "id": "2",
+    "name": "Aston Villa",
+    "league": "Premier League"
+  },
+  {
+    "id": "13",
+    "name": "Newcastle United",
+    "league": "Premier League"
+  },
+  {
+    "id": "19",
+    "name": "West Ham United",
+    "league": "Premier League"
+  },
+  {
+    "id": "39",
+    "name": "Atalanta",
+    "league": "Serie A"
+  },
+  {
+    "id": "46",
+    "name": "Lazio",
+    "league": "Serie A"
+  },
+  {
+    "id": "95",
+    "name": "Leicester City",
+    "league": "Premier League"
+  },
+  {
+    "id": "448",
+    "name": "Athletic Club",
+    "league": "La Liga"
+  },
+  {
+    "id": "449",
+    "name": "Real Betis",
+    "league": "La Liga"
+  },
+  {
+    "id": "23",
+    "name": "Borussia Mönchengladbach",
+    "league": "Bundesliga"
+  },
+  {
+    "id": "1824",
+    "name": "Eintracht Frankfurt",
+    "league": "Bundesliga"
+  },
+  {
+    "id": "110",
+    "name": "Wolverhampton Wanderers",
+    "league": "Premier League"
+  },
+  {
+    "id": "457",
+    "name": "Real Sociedad",
+    "league": "La Liga"
+  },
+  {
+    "id": "219",
+    "name": "Olympique Marseille",
+    "league": "Ligue 1"
+  },
+  {
+    "id": "7",
+    "name": "Everton",
+    "league": "Premier League"
+  },
+  {
+    "id": "110374",
+    "name": "Fiorentina",
+    "league": "Serie A"
+  },
+  {
+    "id": "66",
+    "name": "Olympique Lyonnais",
+    "league": "Ligue 1"
+  },
+  {
+    "id": "1860",
+    "name": "Getafe",
+    "league": "La Liga"
+  },
+  {
+    "id": "69",
+    "name": "Monaco",
+    "league": "Ligue 1"
+  },
+  {
+    "id": "74",
+    "name": "Rennes",
+    "league": "Ligue 1"
+  },
+  {
+    "id": "450",
+    "name": "Celta de Vigo",
+    "league": "La Liga"
+  },
+  {
+    "id": "1799",
+    "name": "Crystal Palace",
+    "league": "Premier League"
+  },
+  {
+    "id": "8",
+    "name": "Leeds United",
+    "league": "Premier League"
+  },
+  {
+    "id": "14",
+    "name": "Nottingham Forest",
+    "league": "Premier League"
+  },
+  {
+    "id": "1808",
+    "name": "Brighton & Hove Albion",
+    "league": "Premier League"
+  },
+  {
+    "id": "25",
+    "name": "SC Freiburg",
+    "league": "Bundesliga"
+  },
+  {
+    "id": "10029",
+    "name": "TSG Hoffenheim",
+    "league": "Bundesliga"
+  },
+  {
+    "id": "72",
+    "name": "Nice",
+    "league": "Ligue 1"
+  },
+  {
+    "id": "144",
+    "name": "Fulham",
+    "league": "Premier League"
+  },
+  {
+    "id": "175",
+    "name": "VfL Wolfsburg",
+    "league": "Bundesliga"
+  },
+  {
+    "id": "452",
+    "name": "Espanyol",
+    "league": "La Liga"
+  },
+  {
+    "id": "461",
+    "name": "Valencia",
+    "league": "La Liga"
+  },
+  {
+    "id": "479",
+    "name": "Osasuna",
+    "league": "La Liga"
+  },
+  {
+    "id": "480",
+    "name": "Rayo Vallecano",
+    "league": "La Liga"
+  },
+  {
+    "id": "17",
+    "name": "Southampton",
+    "league": "Premier League"
+  },
+  {
+    "id": "1831",
+    "name": "FC Union Berlin",
+    "league": "Bundesliga"
+  },
+  {
+    "id": "55",
+    "name": "Udinese",
+    "league": "Serie A"
+  },
+  {
+    "id": "64",
+    "name": "Lens",
+    "league": "Ligue 1"
+  },
+  {
+    "id": "65",
+    "name": "Lille",
+    "league": "Ligue 1"
+  },
+  {
+    "id": "70",
+    "name": "Montpellier",
+    "league": "Ligue 1"
+  },
+  {
+    "id": "76",
+    "name": "Strasbourg",
+    "league": "Ligue 1"
+  },
+  {
+    "id": "111974",
+    "name": "Sassuolo",
+    "league": "Serie A"
+  },
+  {
+    "id": "1925",
+    "name": "Brentford",
+    "league": "Premier League"
+  },
+  {
+    "id": "169",
+    "name": "FSV Mainz 05",
+    "league": "Bundesliga"
+  },
+  {
+    "id": "189",
+    "name": "Bologna",
+    "league": "Serie A"
+  },
+  {
+    "id": "111811",
+    "name": "Monza",
+    "league": "Serie A"
+  },
+  {
+    "id": "453",
+    "name": "Mallorca",
+    "league": "La Liga"
+  },
+  {
+    "id": "462",
+    "name": "Real Valladolid",
+    "league": "La Liga"
+  },
+  {
+    "id": "110062",
+    "name": "Girona",
+    "league": "La Liga"
+  },
+  {
+    "id": "31",
+    "name": "FC Köln",
+    "league": "Bundesliga"
+  },
+  {
+    "id": "36",
+    "name": "VfB Stuttgart",
+    "league": "Bundesliga"
+  },
+  {
+    "id": "110373",
+    "name": "Salernitana",
+    "league": "Serie A"
+  },
+  {
+    "id": "54",
+    "name": "Torino",
+    "league": "Serie A"
+  },
+  {
+    "id": "100409",
+    "name": "FC Augsburg",
+    "league": "Bundesliga"
+  },
+  {
+    "id": "1861",
+    "name": "Almería",
+    "league": "La Liga"
+  },
+  {
+    "id": "71",
+    "name": "Nantes",
+    "league": "Ligue 1"
+  },
+  {
+    "id": "1943",
+    "name": "AFC Bournemouth",
+    "league": "Premier League"
+  },
+  {
+    "id": "166",
+    "name": "Hertha BSC",
+    "league": "Bundesliga"
+  },
+  {
+    "id": "1968",
+    "name": "Cádiz",
+    "league": "La Liga"
+  },
+  {
+    "id": "206",
+    "name": "Hellas Verona",
+    "league": "Serie A"
+  },
+  {
+    "id": "1746",
+    "name": "Empoli",
+    "league": "Serie A"
+  },
+  {
+    "id": "468",
+    "name": "Elche",
+    "league": "La Liga"
+  },
+  {
+    "id": "34",
+    "name": "Schalke 04",
+    "league": "Bundesliga"
+  },
+  {
+    "id": "38",
+    "name": "Werder Bremen",
+    "league": "Bundesliga"
+  },
+  {
+    "id": "1837",
+    "name": "Sampdoria",
+    "league": "Serie A"
+  },
+  {
+    "id": "378",
+    "name": "Brest",
+    "league": "Ligue 1"
+  },
+  {
+    "id": "110741",
+    "name": "Spezia",
+    "league": "Serie A"
+  },
+  {
+    "id": "160",
+    "name": "VfL Bochum 1848",
+    "league": "Bundesliga"
+  },
+  {
+    "id": "1809",
+    "name": "Toulouse",
+    "league": "Ligue 1"
+  },
+  {
+    "id": "294",
+    "name": "Troyes",
+    "league": "Ligue 1"
+  },
+  {
+    "id": "111434",
+    "name": "Cremonese",
+    "league": "Serie A"
+  },
+  {
+    "id": "347",
+    "name": "Lecce",
+    "league": "Serie A"
+  },
+  {
+    "id": "379",
+    "name": "Reims",
+    "league": "Ligue 1"
+  },
+  {
+    "id": "57",
+    "name": "Auxerre",
+    "league": "Ligue 1"
+  },
+  {
+    "id": "217",
+    "name": "Lorient",
+    "league": "Ligue 1"
+  },
+  {
+    "id": "1530",
+    "name": "Angers SCO",
+    "league": "Ligue 1"
+  },
+  {
+    "id": "1815",
+    "name": "Clermont",
+    "league": "Ligue 1"
+  },
+  {
+    "id": "614",
+    "name": "Ajaccio",
+    "league": "Ligue 1"
+  }
+]
