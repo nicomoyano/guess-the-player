@@ -1,7 +1,7 @@
 import { ImageSourcePropType } from 'react-native';
 
 export type Position = {
-  general: String;
-  specific: String;
+  general: string;
+  specific: string;
   image: ImageSourcePropType;
 };
