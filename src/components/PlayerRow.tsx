@@ -44,7 +44,6 @@ const PlayerRow = ({ player, handleGuessPlayer, emptySearch }: Props) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    // paddingVertical: 2,
     borderBottomColor: '#bbb',
     borderBottomWidth: 1,
     cursor: 'pointer',

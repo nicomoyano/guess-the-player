@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
   },
   list: {
     marginTop: 2,
+    overflow: 'hidden',
   },
   guessedList: {
     marginTop: 10,

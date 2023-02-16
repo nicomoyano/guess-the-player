@@ -64,6 +64,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     paddingVertical: 10,
     alignItems: 'center',
+    cursor: 'default',
+    userSelect: 'none',
   },
   playerName: {
     textTransform: 'uppercase',

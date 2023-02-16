@@ -59,10 +59,10 @@ export const gameReducer = (state: GameState, action: GameAction) => {
               : player.country.id === playerToGuess.country.id,
             league: state.correctItems.league
               ? true
-              : player.club.league === playerToGuess.club.league,
+              : player.club.league.id === playerToGuess.club.league.id,
             club: state.correctItems.club
               ? true
-              : player.club === playerToGuess.club,
+              : player.club.id === playerToGuess.club.id,
             position: state.correctItems.position
               ? true
               : player.position.general === playerToGuess.position.general,

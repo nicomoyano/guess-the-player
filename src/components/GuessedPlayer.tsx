@@ -15,8 +15,13 @@ const GuessedPlayer = ({ player, index }: Props) => {
   const gameState = useContext(gameContext);
   const playerToGuess = gameState!.playerToGuess;
 
+  const containerStyle = [
+    styles.container,
+    player.id === playerToGuess.id && { borderColor: 'green', borderWidth: 2 },
+  ];
+
   return (
-    <View style={styles.container}>
+    <View style={containerStyle}>
       <Text style={styles.index}>{`#${index}`}</Text>
       <Text style={styles.playerName}>{player.name}</Text>
       <View style={styles.itemsContainer}>
@@ -62,11 +67,13 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     paddingVertical: 10,
     alignItems: 'center',
+    cursor: 'default',
+    userSelect: 'none',
   },
   index: {
     position: 'absolute',
     left: 0,
-    padding: 10,
+    marginLeft: 20,
     fontSize: 16,
     fontWeight: '700',
   },
