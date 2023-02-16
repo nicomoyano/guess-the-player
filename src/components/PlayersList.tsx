@@ -5,6 +5,7 @@ import GuessedPlayer from './GuessedPlayer';
 import { Player } from '../types/Player';
 import { gameContext } from '../store/gameContext';
 import { getPlayers } from '../api/getPlayers';
+import PlayerToGuess from './PlayerToGuess';
 
 type Props = {
   handleGuessPlayer: (player: Player) => void;
@@ -22,6 +23,7 @@ const PlayersList = ({ handleGuessPlayer }: Props) => {
 
   return (
     <View style={styles.container}>
+      <PlayerToGuess playerToGuess={gameState!.playerToGuess} />
       <TextInput
         onChangeText={(text) => setSearchText(text.toUpperCase())}
         value={searchText}
@@ -54,7 +56,7 @@ const styles = StyleSheet.create({
   container: {
     marginBottom: 60,
     width: '100%',
-    maxWidth: 800,
+    maxWidth: 480,
   },
   input: {
     borderWidth: 1,
