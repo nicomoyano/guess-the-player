@@ -94,12 +94,13 @@ const styles = StyleSheet.create({
   button: {
     width: 70,
     marginVertical: 20,
-    backgroundColor: 'black',
+    backgroundColor: '#09f',
     padding: 5,
     borderRadius: 4,
   },
   buttonText: {
     textAlign: 'center',
     color: 'white',
+    userSelect: 'none',
   },
 });

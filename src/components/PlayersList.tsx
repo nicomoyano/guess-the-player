@@ -25,7 +25,9 @@ const PlayersList = ({ handleGuessPlayer }: Props) => {
     <View style={styles.container}>
       <PlayerToGuess playerToGuess={gameState!.playerToGuess} />
       <TextInput
-        onChangeText={(text) => setSearchText(text)}
+        onChangeText={(text) => setSearchText(text.toUpperCase())}
+        placeholder="Buscar jugador"
+        placeholderTextColor="#888"
         value={searchText}
         style={styles.input}
       />
@@ -66,7 +68,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 5,
     fontSize: 16,
-    textTransform: 'uppercase',
   },
   list: {
     marginTop: 2,

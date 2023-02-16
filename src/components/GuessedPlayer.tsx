@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     flexWrap: 'wrap',
+    rowGap: 8,
   },
 });
 
