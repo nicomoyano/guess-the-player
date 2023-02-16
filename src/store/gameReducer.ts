@@ -4,13 +4,15 @@ export type GameState = {
   playerToGuess: Player;
   playersGuessed: Player[];
   isGuessCorrect: boolean;
-  isRegionCorrect: boolean;
-  isCountryCorrect: boolean;
-  isLeagueCorrect: boolean;
-  isClubCorrect: boolean;
-  isPositionCorrect: boolean;
-  isFootCorrect: boolean;
-  isAgeCorrect: boolean;
+  correctItems: {
+    region: boolean;
+    country: boolean;
+    league: boolean;
+    club: boolean;
+    position: boolean;
+    foot: boolean;
+    age: boolean;
+  };
 };
 
 type GameAction =
@@ -28,6 +30,9 @@ type GameAction =
     }
   | {
       type: 'reveal';
+    }
+  | {
+      type: 'get_hint';
     };
 
 export const gameReducer = (state: GameState, action: GameAction) => {
@@ -41,31 +46,33 @@ export const gameReducer = (state: GameState, action: GameAction) => {
       } else {
         return {
           ...state,
-          playersGuessed: [player, ...state.playersGuessed],
+          playersGuessed: [...state.playersGuessed, player],
           isGuessCorrect: state.isGuessCorrect
             ? true
             : player.id === playerToGuess.id,
-          isRegionCorrect: state.isRegionCorrect
-            ? true
-            : player.country.region === playerToGuess.country.region,
-          isCountryCorrect: state.isCountryCorrect
-            ? true
-            : player.country.id === playerToGuess.country.id,
-          isLeagueCorrect: state.isLeagueCorrect
-            ? true
-            : player.club.league.id === playerToGuess.club.league.id,
-          isClubCorrect: state.isClubCorrect
-            ? true
-            : player.club.id === playerToGuess.club.id,
-          isPositionCorrect: state.isPositionCorrect
-            ? true
-            : player.position.general === playerToGuess.position.general,
-          isFootCorrect: state.isFootCorrect
-            ? true
-            : player.foot === playerToGuess.foot,
-          isAgeCorrect: state.isAgeCorrect
-            ? true
-            : player.age === playerToGuess.age,
+          correctItems: {
+            region: state.correctItems.region
+              ? true
+              : player.country.region === playerToGuess.country.region,
+            country: state.correctItems.country
+              ? true
+              : player.country.id === playerToGuess.country.id,
+            league: state.correctItems.league
+              ? true
+              : player.club.league === playerToGuess.club.league,
+            club: state.correctItems.club
+              ? true
+              : player.club === playerToGuess.club,
+            position: state.correctItems.position
+              ? true
+              : player.position === playerToGuess.position,
+            foot: state.correctItems.foot
+              ? true
+              : player.foot === playerToGuess.foot,
+            age: state.correctItems.age
+              ? true
+              : player.age === playerToGuess.age,
+          },
         };
       }
     case 'reset':
@@ -74,25 +81,41 @@ export const gameReducer = (state: GameState, action: GameAction) => {
         playerToGuess: action.payload.playerToGuess,
         playersGuessed: [],
         isGuessCorrect: false,
-        isRegionCorrect: false,
-        isCountryCorrect: false,
-        isLeagueCorrect: false,
-        isClubCorrect: false,
-        isPositionCorrect: false,
-        isFootCorrect: false,
-        isAgeCorrect: false,
+        correctItems: {
+          region: false,
+          country: false,
+          league: false,
+          club: false,
+          position: false,
+          foot: false,
+          age: false,
+        },
       };
     case 'reveal':
       return {
         ...state,
         isGuessCorrect: true,
-        isRegionCorrect: true,
-        isCountryCorrect: true,
-        isLeagueCorrect: true,
-        isClubCorrect: true,
-        isPositionCorrect: true,
-        isFootCorrect: true,
-        isAgeCorrect: true,
+        correctItems: {
+          region: true,
+          country: true,
+          league: true,
+          club: true,
+          position: true,
+          foot: true,
+          age: true,
+        },
       };
+    case 'get_hint':
+      const newCorrectItems = { ...state.correctItems };
+
+      for (const key in newCorrectItems) {
+        if ((newCorrectItems as any)[key] === true) {
+          continue;
+        } else {
+          (newCorrectItems as any)[key] = true;
+          break;
+        }
+      }
+      return { ...state, correctItems: newCorrectItems };
   }
 };
