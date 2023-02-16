@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    marginTop: 50,
+    marginTop: 20,
     alignItems: 'center',
     marginHorizontal: 10,
   },
@@ -92,12 +92,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   button: {
+    width: 70,
     marginVertical: 20,
     backgroundColor: 'black',
     padding: 5,
     borderRadius: 4,
   },
   buttonText: {
+    textAlign: 'center',
     color: 'white',
   },
 });
