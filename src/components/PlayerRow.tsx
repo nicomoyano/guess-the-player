@@ -3,10 +3,10 @@ import {
   Text,
   StyleSheet,
   Image,
-  TouchableWithoutFeedback,
   Keyboard,
+  Pressable,
 } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import { Player } from '../types/Player';
 
 type Props = {
@@ -16,35 +16,41 @@ type Props = {
 };
 
 const PlayerRow = ({ player, handleGuessPlayer, emptySearch }: Props) => {
+  const [hovering, setHovering] = useState(false);
+
+  const containerStyle = [styles.container, hovering && styles.hover];
+
   return (
-    <TouchableWithoutFeedback
+    <Pressable
+      onHoverIn={() => setHovering(true)}
+      onHoverOut={() => setHovering(false)}
       onPress={() => {
         handleGuessPlayer(player);
         emptySearch();
         Keyboard.dismiss();
       }}
     >
-      <View style={styles.container}>
-        <View style={styles.info}>
-          <Image source={player.image} style={styles.image} />
-          <View>
-            <Text style={styles.name}>{player.name}</Text>
-            <Text style={styles.fullName}>{player.fullName}</Text>
-          </View>
+      <View style={containerStyle}>
+        <Image source={player.image} style={styles.image} />
+        <View style={styles.description}>
+          <Text style={styles.name}>{player.name}</Text>
+          <Text style={styles.fullName}>{player.fullName}</Text>
         </View>
       </View>
-    </TouchableWithoutFeedback>
+    </Pressable>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingHorizontal: 10,
+    // paddingVertical: 2,
     borderBottomColor: '#bbb',
     borderBottomWidth: 1,
+    cursor: 'pointer',
+  },
+  hover: {
+    backgroundColor: '#eee',
   },
   info: {
     flexDirection: 'row',
@@ -54,20 +60,20 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
   },
+  description: {
+    justifyContent: 'flex-end',
+  },
   name: {
     paddingLeft: 8,
-    fontSize: 16,
+    fontSize: 14,
+    textTransform: 'uppercase',
+    cursor: 'pointer',
   },
   fullName: {
     paddingLeft: 8,
     fontSize: 10,
     color: 'gray',
-  },
-  button: {
-    color: 'white',
-    paddingVertical: 2,
-    paddingHorizontal: 8,
-    backgroundColor: 'blue',
+    cursor: 'pointer',
   },
 });
 

@@ -29,11 +29,11 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 100,
-    borderWidth: 3,
+    borderWidth: 2,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#eee',
-    padding: 5,
+    padding: 6,
     borderColor: '#eee',
   },
   questionMark: {

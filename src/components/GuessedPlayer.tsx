@@ -8,14 +8,16 @@ import RegionItem from './PlayerItems/RegionItem';
 
 type Props = {
   player: Player;
+  index: number;
 };
 
-const GuessedPlayer = ({ player }: Props) => {
+const GuessedPlayer = ({ player, index }: Props) => {
   const gameState = useContext(gameContext);
   const playerToGuess = gameState!.playerToGuess;
 
   return (
     <View style={styles.container}>
+      <Text style={styles.index}>{`#${index}`}</Text>
       <Text style={styles.playerName}>{player.name}</Text>
       <View style={styles.itemsContainer}>
         <RegionItem
@@ -61,13 +63,21 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     alignItems: 'center',
   },
+  index: {
+    position: 'absolute',
+    left: 0,
+    padding: 10,
+    fontSize: 16,
+    fontWeight: '700',
+  },
   playerName: {
     textTransform: 'uppercase',
     fontWeight: '700',
+    fontSize: 16,
   },
   itemsContainer: {
     width: '100%',
-    marginTop: 10,
+    marginTop: 20,
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     flexWrap: 'wrap',

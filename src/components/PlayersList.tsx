@@ -25,7 +25,7 @@ const PlayersList = ({ handleGuessPlayer }: Props) => {
     <View style={styles.container}>
       <PlayerToGuess playerToGuess={gameState!.playerToGuess} />
       <TextInput
-        onChangeText={(text) => setSearchText(text.toUpperCase())}
+        onChangeText={(text) => setSearchText(text)}
         value={searchText}
         style={styles.input}
       />
@@ -38,13 +38,14 @@ const PlayersList = ({ handleGuessPlayer }: Props) => {
             emptySearch={() => setSearchText('')}
           />
         )}
-        style={styles.list}
         keyboardShouldPersistTaps={'always'}
+        style={styles.list}
       />
       <FlatList
+        inverted
         data={gameState?.playersGuessed}
-        renderItem={({ item: player }) => (
-          <GuessedPlayer key={player.id} player={player} />
+        renderItem={({ item: player, index }) => (
+          <GuessedPlayer key={player.id} index={index + 1} player={player} />
         )}
         style={styles.guessedList}
       />
@@ -54,7 +55,7 @@ const PlayersList = ({ handleGuessPlayer }: Props) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 60,
+    marginBottom: 50,
     width: '100%',
     maxWidth: 480,
   },
@@ -65,14 +66,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 5,
     fontSize: 16,
+    textTransform: 'uppercase',
   },
   list: {
-    maxHeight: 162,
-    borderRadius: 3,
-    marginHorizontal: 10,
+    marginTop: 2,
   },
   guessedList: {
-    marginTop: 25,
+    marginTop: 10,
     marginBottom: 50,
   },
 });

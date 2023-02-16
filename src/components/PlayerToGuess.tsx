@@ -4,6 +4,7 @@ import { Player } from '../types/Player';
 import { gameContext } from '../store/gameContext';
 import PlayerToGuessItem from './PlayerToGuessItem';
 import PlayerToGuessAge from './PlayerToGuessAge';
+import PlayerToGuessRegion from './PlayerToGuessRegion';
 
 type Props = {
   playerToGuess: Player;
@@ -18,28 +19,29 @@ const PlayerToGuess = ({ playerToGuess }: Props) => {
         {gameState?.isGuessCorrect ? playerToGuess.name : '?'}
       </Text>
       <View style={styles.itemsContainer}>
-        <PlayerToGuessItem
-          isCorrect={gameState!.isRegionCorrect}
+        <PlayerToGuessRegion
+          name={playerToGuess.country.region}
+          isCorrect={gameState!.correctItems.region}
           image={playerToGuess.country.regionImage}
         />
         <PlayerToGuessItem
-          isCorrect={gameState!.isCountryCorrect}
+          isCorrect={gameState!.correctItems.country}
           image={playerToGuess.country.image}
         />
         <PlayerToGuessItem
-          isCorrect={gameState!.isLeagueCorrect}
+          isCorrect={gameState!.correctItems.league}
           image={playerToGuess.club.league.image}
         />
         <PlayerToGuessItem
-          isCorrect={gameState!.isClubCorrect}
+          isCorrect={gameState!.correctItems.club}
           image={playerToGuess.club.image}
         />
         <PlayerToGuessItem
-          isCorrect={gameState!.isPositionCorrect}
+          isCorrect={gameState!.correctItems.position}
           image={playerToGuess.position.image}
         />
         <PlayerToGuessItem
-          isCorrect={gameState!.isFootCorrect}
+          isCorrect={gameState!.correctItems.foot}
           image={
             playerToGuess.foot === 'Right'
               ? require('../images/feet/foot_right.png')
@@ -47,7 +49,7 @@ const PlayerToGuess = ({ playerToGuess }: Props) => {
           }
         />
         <PlayerToGuessAge
-          isCorrect={gameState!.isAgeCorrect}
+          isCorrect={gameState!.correctItems.age}
           age={playerToGuess.age}
         />
       </View>
@@ -59,17 +61,20 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'lightgray',
     borderRadius: 10,
-    marginVertical: 10,
+    marginBottom: 20,
     paddingVertical: 10,
     alignItems: 'center',
   },
   playerName: {
     textTransform: 'uppercase',
     fontWeight: '700',
+    fontSize: 24,
+    backgroundColor: '#eee',
+    paddingHorizontal: 4,
   },
   itemsContainer: {
     width: '100%',
-    marginTop: 10,
+    marginTop: 20,
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     flexWrap: 'wrap',
