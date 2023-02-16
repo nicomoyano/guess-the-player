@@ -11,6 +11,14 @@ import { playersImages } from './src/images/playersImages';
 const initialGameState: GameState = {
   playerToGuess: getRandomPlayer(),
   playersGuessed: [],
+  isGuessCorrect: false,
+  isRegionCorrect: false,
+  isCountryCorrect: false,
+  isLeagueCorrect: false,
+  isClubCorrect: false,
+  isPositionCorrect: false,
+  isFootCorrect: false,
+  isAgeCorrect: false,
 };
 
 export default function App() {
