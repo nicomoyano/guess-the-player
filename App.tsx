@@ -37,10 +37,15 @@ export default function App() {
   };
 
   const handleReset = () => {
-    setShowImage(false);
     gameDispatch({
       type: 'reset',
       payload: { playerToGuess: getRandomPlayer() },
+    });
+  };
+
+  const handleReveal = () => {
+    gameDispatch({
+      type: 'reveal',
     });
   };
 
@@ -48,10 +53,7 @@ export default function App() {
     <View style={styles.container}>
       <gameContext.Provider value={gameState}>
         <View style={styles.buttonsContainer}>
-          <Pressable
-            style={styles.button}
-            onPress={() => setShowImage(!showImage)}
-          >
+          <Pressable style={styles.button} onPress={handleReveal}>
             <Text style={styles.buttonText}>Revelar</Text>
           </Pressable>
           <Pressable style={styles.button} onPress={handleReset}>
@@ -59,14 +61,6 @@ export default function App() {
           </Pressable>
         </View>
         <PlayersList handleGuessPlayer={handleGuessPlayer} />
-        {showImage && (
-          <View style={styles.revealContainer}>
-            <Image source={playerImage} style={styles.revealImage} />
-            <Text style={styles.revealText}>
-              {gameState.playerToGuess.name}
-            </Text>
-          </View>
-        )}
       </gameContext.Provider>
       <StatusBar style="auto" />
     </View>
@@ -77,7 +71,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    marginTop: 50,
+    marginTop: 10,
     alignItems: 'center',
     marginHorizontal: 10,
   },
@@ -91,19 +85,5 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: 'white',
-  },
-  revealContainer: {
-    position: 'absolute',
-    marginTop: 200,
-    backgroundColor: 'lightgrey',
-    alignItems: 'center',
-  },
-  revealImage: {
-    width: 200,
-    height: 200,
-  },
-  revealText: {
-    fontSize: 50,
-    textAlign: 'center',
   },
 });

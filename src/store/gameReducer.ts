@@ -15,12 +15,6 @@ export type GameState = {
 
 type GameAction =
   | {
-      type: 'set_player_to_guess';
-      payload: {
-        player: Player;
-      };
-    }
-  | {
       type: 'guess_player';
       payload: {
         player: Player;
@@ -31,15 +25,13 @@ type GameAction =
       payload: {
         playerToGuess: Player;
       };
+    }
+  | {
+      type: 'reveal';
     };
 
 export const gameReducer = (state: GameState, action: GameAction) => {
   switch (action.type) {
-    case 'set_player_to_guess':
-      return {
-        ...state,
-        playerToGuess: action.payload.player,
-      };
     case 'guess_player':
       const player = action.payload.player;
       const { playerToGuess } = state;
@@ -89,6 +81,18 @@ export const gameReducer = (state: GameState, action: GameAction) => {
         isPositionCorrect: false,
         isFootCorrect: false,
         isAgeCorrect: false,
+      };
+    case 'reveal':
+      return {
+        ...state,
+        isGuessCorrect: true,
+        isRegionCorrect: true,
+        isCountryCorrect: true,
+        isLeagueCorrect: true,
+        isClubCorrect: true,
+        isPositionCorrect: true,
+        isFootCorrect: true,
+        isAgeCorrect: true,
       };
   }
 };
