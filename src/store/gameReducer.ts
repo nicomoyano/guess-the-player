@@ -65,7 +65,7 @@ export const gameReducer = (state: GameState, action: GameAction) => {
               : player.club === playerToGuess.club,
             position: state.correctItems.position
               ? true
-              : player.position === playerToGuess.position,
+              : player.position.general === playerToGuess.position.general,
             foot: state.correctItems.foot
               ? true
               : player.foot === playerToGuess.foot,
