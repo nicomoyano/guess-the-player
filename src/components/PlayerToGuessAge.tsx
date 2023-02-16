@@ -42,25 +42,36 @@ const PlayerToGuessAge = ({ isCorrect, age }: Props) => {
   };
 
   return (
-    <View style={styles.itemContainer}>
-      {isCorrect ? (
-        <Text style={styles.age}>{age}</Text>
-      ) : (
-        <Text
-          style={
-            ageRange().maxBefore || ageRange().minAfter
-              ? styles.range
-              : styles.questionMark
-          }
-        >
-          {ageRange().maxBefore || ageRange().minAfter ? ageRangeText() : '?'}
-        </Text>
-      )}
+    <View style={styles.container}>
+      <Text style={styles.title}>EDAD</Text>
+      <View style={styles.itemContainer}>
+        {isCorrect ? (
+          <Text style={styles.age}>{age}</Text>
+        ) : (
+          <Text
+            style={
+              ageRange().maxBefore || ageRange().minAfter
+                ? styles.range
+                : styles.questionMark
+            }
+          >
+            {ageRange().maxBefore || ageRange().minAfter ? ageRangeText() : '?'}
+          </Text>
+        )}
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 14,
+    fontWeight: '700',
+    marginBottom: 8,
+  },
   itemContainer: {
     width: 50,
     height: 50,

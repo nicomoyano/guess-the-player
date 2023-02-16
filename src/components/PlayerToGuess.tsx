@@ -16,7 +16,7 @@ const PlayerToGuess = ({ playerToGuess }: Props) => {
   return (
     <View style={styles.container}>
       <Text style={styles.playerName}>
-        {gameState?.isGuessCorrect ? playerToGuess.name : '?'}
+        {gameState?.isGuessCorrect ? playerToGuess.name : '? ? ?'}
       </Text>
       <View style={styles.itemsContainer}>
         <PlayerToGuessRegion
@@ -27,18 +27,22 @@ const PlayerToGuess = ({ playerToGuess }: Props) => {
         <PlayerToGuessItem
           isCorrect={gameState!.correctItems.country}
           image={playerToGuess.country.image}
+          category="PAIS"
         />
         <PlayerToGuessItem
           isCorrect={gameState!.correctItems.league}
           image={playerToGuess.club.league.image}
+          category="LIGA"
         />
         <PlayerToGuessItem
           isCorrect={gameState!.correctItems.club}
           image={playerToGuess.club.image}
+          category="CLUB"
         />
         <PlayerToGuessItem
           isCorrect={gameState!.correctItems.position}
           image={playerToGuess.position.image}
+          category="POS"
         />
         <PlayerToGuessItem
           isCorrect={gameState!.correctItems.foot}
@@ -47,6 +51,7 @@ const PlayerToGuess = ({ playerToGuess }: Props) => {
               ? require('../images/feet/foot_right.png')
               : require('../images/feet/foot_left.png')
           }
+          category="PIE"
         />
         <PlayerToGuessAge
           isCorrect={gameState!.correctItems.age}

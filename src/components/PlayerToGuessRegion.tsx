@@ -17,9 +17,10 @@ const PlayerToGuessRegion = ({ name, image, isCorrect }: Props) => {
   const shortName = name.slice(0, 2).toUpperCase();
 
   return (
-    <View>
+    <View style={styles.container}>
+      <Text style={styles.title}>CONT</Text>
       <View>
-        <View style={styles.container}>
+        <View style={styles.itemContainer}>
           {isCorrect ? (
             <>
               <Image source={image} style={styles.image} />
@@ -39,6 +40,14 @@ const PlayerToGuessRegion = ({ name, image, isCorrect }: Props) => {
 
 const styles = StyleSheet.create({
   container: {
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 14,
+    fontWeight: '700',
+    marginBottom: 8,
+  },
+  itemContainer: {
     width: 50,
     height: 50,
     borderRadius: 100,

@@ -10,21 +10,33 @@ import React from 'react';
 type Props = {
   isCorrect: boolean;
   image: ImageSourcePropType;
+  category: string;
 };
 
-const PlayerToGuessItem = ({ isCorrect, image }: Props) => {
+const PlayerToGuessItem = ({ isCorrect, image, category }: Props) => {
   return (
-    <View style={styles.itemContainer}>
-      {isCorrect ? (
-        <Image source={image} style={styles.image} />
-      ) : (
-        <Text style={styles.questionMark}>?</Text>
-      )}
+    <View style={styles.container}>
+      <Text style={styles.title}>{category}</Text>
+      <View style={styles.itemContainer}>
+        {isCorrect ? (
+          <Image source={image} style={styles.image} />
+        ) : (
+          <Text style={styles.questionMark}>?</Text>
+        )}
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 14,
+    fontWeight: '700',
+    marginBottom: 8,
+  },
   itemContainer: {
     width: 50,
     height: 50,
@@ -36,6 +48,7 @@ const styles = StyleSheet.create({
     padding: 6,
     borderColor: '#eee',
   },
+
   questionMark: {
     fontSize: 24,
     fontWeight: '600',
