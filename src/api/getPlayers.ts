@@ -15,6 +15,8 @@ export const getPlayers = (searchText: String | null): Player[] => {
 
     const normalizedSearchText = searchText
       .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
       .split(' ')
       .filter((w) => w !== '');
 
@@ -25,22 +27,42 @@ export const getPlayers = (searchText: String | null): Player[] => {
 
       const rawPlayer = rawPlayers[i];
 
-      const normalizedFullName = rawPlayer.fullName
-        .toLowerCase()
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '');
       const normalizedName = rawPlayer.name
         .toLowerCase()
         .normalize('NFD')
         .replace(/[\u0300-\u036f]/g, '');
 
-      if (
-        normalizedSearchText.every(
-          (word) =>
-            normalizedFullName.includes(word) || normalizedName.includes(word)
-        )
-      ) {
-        rawFilteredPlayers.push(rawPlayer);
+      if (normalizedSearchText.every((word) => normalizedName.includes(word))) {
+        {
+          rawFilteredPlayers.push(rawPlayer);
+        }
+      }
+    }
+
+    if (rawFilteredPlayers.length < 5) {
+      for (let i = 0; i < rawPlayers.length; i++) {
+        if (rawFilteredPlayers.length === 5) {
+          break;
+        }
+
+        const rawPlayer = rawPlayers[i];
+
+        if (rawFilteredPlayers.some((player) => player.id === rawPlayer.id)) {
+          break;
+        }
+
+        const normalizedFullName = rawPlayer.fullName
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '');
+
+        if (
+          normalizedSearchText.every((word) =>
+            normalizedFullName.includes(word)
+          )
+        ) {
+          rawFilteredPlayers.push(rawPlayer);
+        }
       }
     }
 
