@@ -10,16 +10,11 @@ type Props = {
 const AgeItem = ({ playerAge, playerToGuessAge }: Props) => {
   const isCorrect = playerAge === playerToGuessAge;
 
-  const ageStyle = [
-    styles.age,
-    isCorrect ? styles.correctAge : styles.incorrectAge,
-  ];
-
   const ageArrow = playerAge < playerToGuessAge ? '↑' : '↓';
 
   return (
     <ItemContainer isCorrect={isCorrect}>
-      <Text style={ageStyle}>
+      <Text style={styles.age}>
         {playerAge}
         {playerAge !== playerToGuessAge && ageArrow}
       </Text>
@@ -32,12 +27,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
     fontWeight: '600',
-  },
-  correctAge: {
-    color: 'green',
-  },
-  incorrectAge: {
-    color: 'red',
   },
 });
 

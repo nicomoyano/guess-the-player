@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native';
 import React, { useContext } from 'react';
-import { gameContext } from '../store/gameContext';
+import { useGameContext } from '../../store/useGameContext';
 
 type Props = {
   isCorrect: boolean;
@@ -8,7 +8,7 @@ type Props = {
 };
 
 const PlayerToGuessAge = ({ isCorrect, age }: Props) => {
-  const gameState = useContext(gameContext);
+  const { gameState } = useGameContext();
   const agesArray: number[] = [];
   gameState!.playersGuessed.forEach((player) => agesArray.push(player.age));
 

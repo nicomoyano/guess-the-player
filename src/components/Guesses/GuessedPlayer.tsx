@@ -1,10 +1,11 @@
 import { View, StyleSheet, Text } from 'react-native';
-import React, { useContext } from 'react';
-import { Player } from '../types/Player';
-import { gameContext } from '../store/gameContext';
-import ImageItem from './PlayerItems/ImageItem';
+import React from 'react';
+import { Player } from '../../types/Player';
 import AgeItem from './PlayerItems/AgeItem';
 import RegionItem from './PlayerItems/RegionItem';
+import ImageItem from './PlayerItems/ImageItem';
+import { useGameContext } from '../../store/useGameContext';
+import ShirtNumberItem from './PlayerItems/ShirtNumberItem';
 
 type Props = {
   player: Player;
@@ -12,7 +13,7 @@ type Props = {
 };
 
 const GuessedPlayer = ({ player, index }: Props) => {
-  const gameState = useContext(gameContext);
+  const { gameState } = useGameContext();
   const playerToGuess = gameState!.playerToGuess;
 
   const containerStyle = [
@@ -22,7 +23,6 @@ const GuessedPlayer = ({ player, index }: Props) => {
 
   return (
     <View style={containerStyle}>
-      <Text style={styles.index}>{`#${index}`}</Text>
       <Text style={styles.playerName}>{player.name}</Text>
       <View style={styles.itemsContainer}>
         <RegionItem
@@ -46,13 +46,9 @@ const GuessedPlayer = ({ player, index }: Props) => {
           image={player.position.image}
           isCorrect={player.position.general === playerToGuess.position.general}
         />
-        <ImageItem
-          image={
-            player.foot === 'Right'
-              ? require('../images/feet/foot_right.png')
-              : require('../images/feet/foot_left.png')
-          }
-          isCorrect={player.foot === playerToGuess.foot}
+        <ShirtNumberItem
+          playerNum={player.kitNumber}
+          playerToGuessNum={playerToGuess.kitNumber}
         />
         <AgeItem playerAge={player.age} playerToGuessAge={playerToGuess.age} />
       </View>
@@ -71,9 +67,6 @@ const styles = StyleSheet.create({
     userSelect: 'none',
   },
   index: {
-    position: 'absolute',
-    left: 0,
-    marginLeft: 20,
     fontSize: 16,
     fontWeight: '700',
   },
@@ -84,7 +77,7 @@ const styles = StyleSheet.create({
   },
   itemsContainer: {
     width: '100%',
-    marginTop: 20,
+    marginTop: 10,
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     flexWrap: 'wrap',

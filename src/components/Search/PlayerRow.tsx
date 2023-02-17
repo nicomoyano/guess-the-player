@@ -7,15 +7,16 @@ import {
   Pressable,
 } from 'react-native';
 import React, { useState } from 'react';
-import { Player } from '../types/Player';
+import { Player } from '../../types/Player';
+import { useGameContext } from '../../store/useGameContext';
 
 type Props = {
   player: Player;
-  handleGuessPlayer: (player: Player) => void;
   emptySearch: () => void;
 };
 
-const PlayerRow = ({ player, handleGuessPlayer, emptySearch }: Props) => {
+const PlayerRow = ({ player, emptySearch }: Props) => {
+  const { gameActions } = useGameContext();
   const [hovering, setHovering] = useState(false);
 
   const containerStyle = [styles.container, hovering && styles.hover];
@@ -25,7 +26,7 @@ const PlayerRow = ({ player, handleGuessPlayer, emptySearch }: Props) => {
       onHoverIn={() => setHovering(true)}
       onHoverOut={() => setHovering(false)}
       onPress={() => {
-        handleGuessPlayer(player);
+        gameActions.handleGuessPlayer(player);
         emptySearch();
         Keyboard.dismiss();
       }}

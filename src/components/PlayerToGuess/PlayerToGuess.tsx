@@ -1,20 +1,20 @@
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, Image } from 'react-native';
 import React, { useContext } from 'react';
-import { Player } from '../types/Player';
-import { gameContext } from '../store/gameContext';
 import PlayerToGuessItem from './PlayerToGuessItem';
 import PlayerToGuessAge from './PlayerToGuessAge';
 import PlayerToGuessRegion from './PlayerToGuessRegion';
+import { useGameContext } from '../../store/useGameContext';
+import PlayerToGuessShirtNumber from './PlayerToGuessShirtNumber';
 
-type Props = {
-  playerToGuess: Player;
-};
-
-const PlayerToGuess = ({ playerToGuess }: Props) => {
-  const gameState = useContext(gameContext);
+const PlayerToGuess = () => {
+  const { gameState } = useGameContext();
+  const { playerToGuess } = gameState;
 
   return (
     <View style={styles.container}>
+      {gameState.isGuessCorrect && (
+        <Image source={playerToGuess.image} style={styles.playerImage} />
+      )}
       <Text style={styles.playerName}>
         {gameState?.isGuessCorrect ? playerToGuess.name : '? ? ?'}
       </Text>
@@ -44,14 +44,9 @@ const PlayerToGuess = ({ playerToGuess }: Props) => {
           image={playerToGuess.position.image}
           category="POS"
         />
-        <PlayerToGuessItem
-          isCorrect={gameState!.correctItems.foot}
-          image={
-            playerToGuess.foot === 'Right'
-              ? require('../images/feet/foot_right.png')
-              : require('../images/feet/foot_left.png')
-          }
-          category="PIE"
+        <PlayerToGuessShirtNumber
+          isCorrect={gameState!.correctItems.kitNumber}
+          kitNumber={playerToGuess.kitNumber}
         />
         <PlayerToGuessAge
           isCorrect={gameState!.correctItems.age}
@@ -71,6 +66,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     cursor: 'default',
     userSelect: 'none',
+  },
+  playerImage: {
+    width: 100,
+    height: 100,
+    borderRadius: 100,
+    borderWidth: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#eee',
+    padding: 6,
+    borderColor: '#eee',
+    marginBottom: 4,
   },
   playerName: {
     textTransform: 'uppercase',

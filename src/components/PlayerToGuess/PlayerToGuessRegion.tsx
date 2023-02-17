@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#eee',
     borderColor: 'transparent',
+    padding: 4,
   },
   questionMark: {
     fontSize: 24,
@@ -68,8 +69,8 @@ const styles = StyleSheet.create({
   },
   overlayContainer: {
     position: 'absolute',
-    width: '100%',
-    height: '100%',
+    width: 36,
+    height: 36,
     alignItems: 'center',
     justifyContent: 'center',
   },

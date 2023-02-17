@@ -6,6 +6,7 @@ import {
   Text,
 } from 'react-native';
 import React from 'react';
+import ItemContainer from './ItemContainer';
 
 type Props = {
   name: string;
@@ -16,41 +17,20 @@ type Props = {
 const RegionItem = ({ name, image, isCorrect }: Props) => {
   const shortName = name.slice(0, 2).toUpperCase();
 
-  const containerStyle = [
-    styles.container,
-    isCorrect ? styles.correctBorder : styles.incorrectBorder,
-  ];
-
   return (
     <View>
-      <View style={containerStyle}>
+      <ItemContainer isCorrect={isCorrect}>
         <Image source={image} style={styles.image} />
         <View style={styles.overlayContainer}>
           <View style={styles.overlay}></View>
           <Text style={styles.name}>{shortName}</Text>
         </View>
-      </View>
+      </ItemContainer>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    width: 50,
-    height: 50,
-    borderRadius: 100,
-    borderWidth: 2,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#eee',
-    borderColor: 'transparent',
-  },
-  correctBorder: {
-    borderColor: 'green',
-  },
-  incorrectBorder: {
-    borderColor: 'red',
-  },
   image: {
     width: '100%',
     height: '100%',
@@ -58,8 +38,8 @@ const styles = StyleSheet.create({
   },
   overlayContainer: {
     position: 'absolute',
-    width: '100%',
-    height: '100%',
+    width: 30,
+    height: 30,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -70,14 +50,14 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'white',
-    opacity: 0.7,
+    backgroundColor: 'black',
+    opacity: 0.5,
   },
   name: {
-    fontSize: 16,
+    fontSize: 14,
     textAlign: 'center',
     fontWeight: '900',
-    color: 'black',
+    color: 'white',
     zIndex: 1,
   },
 });
