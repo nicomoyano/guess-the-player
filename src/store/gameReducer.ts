@@ -1,4 +1,6 @@
+import { getRandomPlayer } from '../api/getRandomPlayer';
 import { Player } from '../types/Player';
+import { GameAction } from './GameAction';
 
 export type GameState = {
   playerToGuess: Player;
@@ -10,30 +12,25 @@ export type GameState = {
     league: boolean;
     club: boolean;
     position: boolean;
-    foot: boolean;
+    kitNumber: boolean;
     age: boolean;
   };
 };
 
-type GameAction =
-  | {
-      type: 'guess_player';
-      payload: {
-        player: Player;
-      };
-    }
-  | {
-      type: 'reset';
-      payload: {
-        playerToGuess: Player;
-      };
-    }
-  | {
-      type: 'reveal';
-    }
-  | {
-      type: 'get_hint';
-    };
+export const initialGameState: GameState = {
+  playerToGuess: getRandomPlayer(),
+  playersGuessed: [],
+  isGuessCorrect: false,
+  correctItems: {
+    region: false,
+    country: false,
+    league: false,
+    club: false,
+    position: false,
+    kitNumber: false,
+    age: false,
+  },
+};
 
 export const gameReducer = (state: GameState, action: GameAction) => {
   switch (action.type) {
@@ -66,9 +63,9 @@ export const gameReducer = (state: GameState, action: GameAction) => {
             position: state.correctItems.position
               ? true
               : player.position.general === playerToGuess.position.general,
-            foot: state.correctItems.foot
+            kitNumber: state.correctItems.kitNumber
               ? true
-              : player.foot === playerToGuess.foot,
+              : player.kitNumber === playerToGuess.kitNumber,
             age: state.correctItems.age
               ? true
               : player.age === playerToGuess.age,
@@ -87,7 +84,7 @@ export const gameReducer = (state: GameState, action: GameAction) => {
           league: false,
           club: false,
           position: false,
-          foot: false,
+          kitNumber: false,
           age: false,
         },
       };
@@ -101,7 +98,7 @@ export const gameReducer = (state: GameState, action: GameAction) => {
           league: true,
           club: true,
           position: true,
-          foot: true,
+          kitNumber: true,
           age: true,
         },
       };

@@ -1,4 +1,15 @@
 import { createContext } from 'react';
+import { Player } from '../types/Player';
 import { GameState } from './gameReducer';
 
-export const gameContext = createContext<GameState | null>(null);
+export type GameContext = {
+  gameState: GameState;
+  gameActions: {
+    handleGuessPlayer: (player: Player) => void;
+    handleHint: () => void;
+    handleReset: () => void;
+    handleReveal: () => void;
+  };
+};
+
+export const gameContext = createContext<GameContext | null>(null);
