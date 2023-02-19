@@ -7,8 +7,8 @@ import {
   Pressable,
 } from 'react-native';
 import React, { useState } from 'react';
-import { Player } from '../../types/Player';
-import { useGameContext } from '../../store/useGameContext';
+import { Player } from '../types/Player';
+import { useGameContext } from '../store/useGameContext';
 
 type Props = {
   player: Player;

@@ -1,41 +1,37 @@
-import { View, Text, StyleSheet, Pressable } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import React from 'react';
+import { Ionicons } from '@expo/vector-icons';
 import { useGameContext } from '../store/useGameContext';
 
 const Buttons = () => {
   const { gameActions } = useGameContext();
+  const { handleHint, handleReveal } = gameActions;
 
   return (
-    <View style={styles.buttonsContainer}>
-      <Pressable style={styles.button} onPress={gameActions.handleReveal}>
-        <Text style={styles.buttonText}>Revelar</Text>
+    <View style={styles.container}>
+      <Pressable style={styles.button} onPress={handleHint}>
+        <Ionicons name="ios-bulb" size={18} color="white" />
       </Pressable>
-      <Pressable style={styles.button} onPress={gameActions.handleHint}>
-        <Text style={styles.buttonText}>Pista</Text>
-      </Pressable>
-      <Pressable style={styles.button} onPress={gameActions.handleReset}>
-        <Text style={styles.buttonText}>Reiniciar</Text>
+      <Pressable style={styles.button} onPress={handleReveal}>
+        <Ionicons name="flag" size={18} color="white" />
       </Pressable>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  buttonsContainer: {
+  container: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    marginLeft: 8,
   },
   button: {
-    width: 70,
-    marginVertical: 20,
     backgroundColor: '#09f',
-    padding: 5,
-    borderRadius: 4,
-  },
-  buttonText: {
-    textAlign: 'center',
-    color: 'white',
-    userSelect: 'none',
+    borderRadius: 32,
+    width: 32,
+    height: 32,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginHorizontal: 4,
   },
 });
 

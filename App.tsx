@@ -1,19 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import GameProvider from './src/store/GameProvider';
-import Buttons from './src/components/Buttons';
 import PlayerToGuess from './src/components/PlayerToGuess/PlayerToGuess';
-import SearchPlayers from './src/components/Search/SearchPlayers';
 import GuessedList from './src/components/Guesses/GuessedList';
+import Header from './src/components/Header';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <GameProvider>
         <View style={styles.game}>
-          <Buttons />
+          <Header />
           <PlayerToGuess />
-          <SearchPlayers />
           <GuessedList />
         </View>
       </GameProvider>
@@ -28,6 +26,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 10,
     paddingTop: 20,
+    marginTop: 20,
   },
   game: {
     height: '100%',

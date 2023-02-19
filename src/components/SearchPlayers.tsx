@@ -1,8 +1,8 @@
-import { View, Text, TextInput, FlatList, StyleSheet } from 'react-native';
+import { View, TextInput, FlatList, StyleSheet } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import PlayerRow from './PlayerRow';
-import { Player } from '../../types/Player';
-import { getPlayers } from '../../api/getPlayers';
+import { Player } from '../types/Player';
+import { getPlayers } from '../api/getPlayers';
 
 const SearchPlayers = () => {
   const [filteredPlayers, setFilteredPlayers] = useState<Player[]>([]);
@@ -13,7 +13,7 @@ const SearchPlayers = () => {
   }, [searchText]);
 
   return (
-    <View>
+    <View style={styles.container}>
       <TextInput
         onChangeText={(text) => setSearchText(text.toUpperCase())}
         placeholder="Buscar jugador"
@@ -34,6 +34,9 @@ const SearchPlayers = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   input: {
     borderWidth: 1,
     borderColor: 'gray',
