@@ -18,13 +18,14 @@ const GuessedPlayer = ({ player, index }: Props) => {
 
   const containerStyle = [
     styles.container,
-    player.id === playerToGuess.id && { borderColor: 'green', borderWidth: 2 },
+    player.id === playerToGuess.id && { borderColor: 'green', borderWidth: 4 },
   ];
 
   return (
     <View style={containerStyle}>
       <Text style={styles.playerName}>{player.name}</Text>
       <View style={styles.itemsContainer}>
+        <AgeItem playerAge={player.age} playerToGuessAge={playerToGuess.age} />
         <RegionItem
           name={player.country.region}
           image={player.country.regionImage}
@@ -50,7 +51,6 @@ const GuessedPlayer = ({ player, index }: Props) => {
           playerNum={player.kitNumber}
           playerToGuessNum={playerToGuess.kitNumber}
         />
-        <AgeItem playerAge={player.age} playerToGuessAge={playerToGuess.age} />
       </View>
     </View>
   );

@@ -7,13 +7,13 @@ export type GameState = {
   playersGuessed: Player[];
   isGuessCorrect: boolean;
   correctItems: {
+    age: boolean;
     region: boolean;
     country: boolean;
     league: boolean;
     club: boolean;
     position: boolean;
     kitNumber: boolean;
-    age: boolean;
   };
 };
 
@@ -22,13 +22,13 @@ export const initialGameState: GameState = {
   playersGuessed: [],
   isGuessCorrect: false,
   correctItems: {
+    age: false,
     region: false,
     country: false,
     league: false,
     club: false,
     position: false,
     kitNumber: false,
-    age: false,
   },
 };
 
@@ -48,6 +48,9 @@ export const gameReducer = (state: GameState, action: GameAction) => {
             ? true
             : player.id === playerToGuess.id,
           correctItems: {
+            age: state.correctItems.age
+              ? true
+              : player.age === playerToGuess.age,
             region: state.correctItems.region
               ? true
               : player.country.region === playerToGuess.country.region,
@@ -66,9 +69,6 @@ export const gameReducer = (state: GameState, action: GameAction) => {
             kitNumber: state.correctItems.kitNumber
               ? true
               : player.kitNumber === playerToGuess.kitNumber,
-            age: state.correctItems.age
-              ? true
-              : player.age === playerToGuess.age,
           },
         };
       }
@@ -79,13 +79,13 @@ export const gameReducer = (state: GameState, action: GameAction) => {
         playersGuessed: [],
         isGuessCorrect: false,
         correctItems: {
+          age: false,
           region: false,
           country: false,
           league: false,
           club: false,
           position: false,
           kitNumber: false,
-          age: false,
         },
       };
     case 'reveal':
@@ -93,13 +93,13 @@ export const gameReducer = (state: GameState, action: GameAction) => {
         ...state,
         isGuessCorrect: true,
         correctItems: {
+          age: true,
           region: true,
           country: true,
           league: true,
           club: true,
           position: true,
           kitNumber: true,
-          age: true,
         },
       };
     case 'get_hint':

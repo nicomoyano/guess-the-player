@@ -19,6 +19,10 @@ const PlayerToGuess = () => {
         {gameState?.isGuessCorrect ? playerToGuess.name : '? ? ?'}
       </Text>
       <View style={styles.itemsContainer}>
+        <PlayerToGuessAge
+          isCorrect={gameState!.correctItems.age}
+          age={playerToGuess.age}
+        />
         <PlayerToGuessRegion
           name={playerToGuess.country.region}
           isCorrect={gameState!.correctItems.region}
@@ -47,10 +51,6 @@ const PlayerToGuess = () => {
         <PlayerToGuessShirtNumber
           isCorrect={gameState!.correctItems.kitNumber}
           kitNumber={playerToGuess.kitNumber}
-        />
-        <PlayerToGuessAge
-          isCorrect={gameState!.correctItems.age}
-          age={playerToGuess.age}
         />
       </View>
     </View>
