@@ -48,7 +48,7 @@ const PlayerToGuessShirtNumber = ({ isCorrect, kitNumber }: Props) => {
       <Text style={styles.title}>NUM</Text>
       <View style={styles.itemContainer}>
         {isCorrect ? (
-          <Text style={styles.number}>{'#' + kitNumber}</Text>
+          <Text style={styles.number}>{kitNumber}</Text>
         ) : (
           <Text
             style={
