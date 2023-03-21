@@ -1,4 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
+import Constants from 'expo-constants';
 import { StyleSheet, View } from 'react-native';
 import GameProvider from './src/store/GameProvider';
 import PlayerToGuess from './src/components/PlayerToGuess/PlayerToGuess';
@@ -25,8 +26,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     paddingHorizontal: 10,
-    paddingTop: 20,
     marginTop: 20,
+    paddingTop: Constants.statusBarHeight + 40,
   },
   game: {
     height: '100%',
