@@ -17,7 +17,7 @@ const GuessedList = () => {
             <Text
               style={{ width: 80, textAlign: 'center', color: 'lightgray' }}
             >
-              INTENTOS
+              GUESSES
             </Text>
           </View>
           <View style={{ flex: 1, height: 1, backgroundColor: 'lightgray' }} />
