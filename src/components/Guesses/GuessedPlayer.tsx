@@ -29,7 +29,9 @@ const GuessedPlayer = ({ player, index }: Props) => {
         <RegionItem
           id={player.country.region.id}
           image={player.country.region.image}
-          isCorrect={player.country.region === playerToGuess.country.region}
+          isCorrect={
+            player.country.region.id === playerToGuess.country.region.id
+          }
         />
         <ImageItem
           image={player.country.image}

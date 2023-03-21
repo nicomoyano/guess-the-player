@@ -3,13 +3,14 @@ import { Player } from '../types/Player';
 import { getPlayer } from './utils/getPlayer';
 
 export const getRandomPlayer = (): Player => {
-  const fileredRawPlayers = rawPlayers.filter(
-    (rawPlayer) => rawPlayer.overall >= 80
+  const filteredRawPlayers = rawPlayers.filter(
+    (rawPlayer) => rawPlayer.overall >= 85
   );
 
   const rawPlayer =
-    fileredRawPlayers[Math.floor(Math.random() * fileredRawPlayers.length)];
+    filteredRawPlayers[Math.floor(Math.random() * filteredRawPlayers.length)];
   const player = getPlayer(rawPlayer);
+  console.log(player.name);
 
   return player;
 };
