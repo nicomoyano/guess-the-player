@@ -1,9 +1,6 @@
 import { ImageSourcePropType } from 'react-native';
-import { Region } from './Region';
 
-export type Country = {
+export type Region = {
   id: string;
-  name: string;
   image: ImageSourcePropType;
-  region: Region;
 };

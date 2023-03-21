@@ -9,21 +9,19 @@ import React from 'react';
 import ItemContainer from './ItemContainer';
 
 type Props = {
-  name: string;
+  id: string;
   image: ImageSourcePropType;
   isCorrect: boolean;
 };
 
-const RegionItem = ({ name, image, isCorrect }: Props) => {
-  const shortName = name.slice(0, 2).toUpperCase();
-
+const RegionItem = ({ id, image, isCorrect }: Props) => {
   return (
     <View>
       <ItemContainer isCorrect={isCorrect}>
         <Image source={image} style={styles.image} />
         <View style={styles.overlayContainer}>
           <View style={styles.overlay}></View>
-          <Text style={styles.name}>{shortName}</Text>
+          <Text style={styles.name}>{id}</Text>
         </View>
       </ItemContainer>
     </View>

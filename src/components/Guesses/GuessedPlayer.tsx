@@ -27,8 +27,8 @@ const GuessedPlayer = ({ player, index }: Props) => {
       <View style={styles.itemsContainer}>
         <AgeItem playerAge={player.age} playerToGuessAge={playerToGuess.age} />
         <RegionItem
-          name={player.country.region}
-          image={player.country.regionImage}
+          id={player.country.region.id}
+          image={player.country.region.image}
           isCorrect={player.country.region === playerToGuess.country.region}
         />
         <ImageItem

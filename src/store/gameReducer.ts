@@ -53,7 +53,7 @@ export const gameReducer = (state: GameState, action: GameAction) => {
               : player.age === playerToGuess.age,
             region: state.correctItems.region
               ? true
-              : player.country.region === playerToGuess.country.region,
+              : player.country.region.id === playerToGuess.country.region.id,
             country: state.correctItems.country
               ? true
               : player.country.id === playerToGuess.country.id,

@@ -8,14 +8,12 @@ import {
 import React from 'react';
 
 type Props = {
-  name: string;
+  id: string;
   image: ImageSourcePropType;
   isCorrect: boolean;
 };
 
-const PlayerToGuessRegion = ({ name, image, isCorrect }: Props) => {
-  const shortName = name.slice(0, 2).toUpperCase();
-
+const PlayerToGuessRegion = ({ id, image, isCorrect }: Props) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>CONT</Text>
@@ -26,7 +24,7 @@ const PlayerToGuessRegion = ({ name, image, isCorrect }: Props) => {
               <Image source={image} style={styles.image} />
               <View style={styles.overlayContainer}>
                 <View style={styles.overlay}></View>
-                <Text style={styles.name}>{shortName}</Text>
+                <Text style={styles.name}>{id}</Text>
               </View>
             </>
           ) : (
@@ -46,6 +44,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '700',
     marginBottom: 8,
+    color: 'black',
   },
   itemContainer: {
     width: 50,

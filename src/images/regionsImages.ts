@@ -1,22 +1,22 @@
 export const regionsImages = [
   {
-    id: 'africa',
-    image: require('../images/regions/africa.png'),
+    id: 'AF',
+    image: require('../images/regions/AF.png'),
   },
   {
-    id: 'americas',
-    image: require('../images/regions/americas.png'),
+    id: 'AM',
+    image: require('../images/regions/AM.png'),
   },
   {
-    id: 'asia',
-    image: require('../images/regions/asia.png'),
+    id: 'AS',
+    image: require('../images/regions/AS.png'),
   },
   {
-    id: 'europe',
-    image: require('../images/regions/europe.png'),
+    id: 'EU',
+    image: require('../images/regions/EU.png'),
   },
   {
-    id: 'oceania',
-    image: require('../images/regions/oceania.png'),
+    id: 'OC',
+    image: require('../images/regions/OC.png'),
   },
 ];

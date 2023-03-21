@@ -1,4 +1,5 @@
 import { View, StyleSheet, Text, Image } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import React, { useContext } from 'react';
 import PlayerToGuessItem from './PlayerToGuessItem';
 import PlayerToGuessAge from './PlayerToGuessAge';
@@ -24,9 +25,9 @@ const PlayerToGuess = () => {
           age={playerToGuess.age}
         />
         <PlayerToGuessRegion
-          name={playerToGuess.country.region}
+          id={playerToGuess.country.region.id}
+          image={playerToGuess.country.region.image}
           isCorrect={gameState!.correctItems.region}
-          image={playerToGuess.country.regionImage}
         />
         <PlayerToGuessItem
           isCorrect={gameState!.correctItems.country}
