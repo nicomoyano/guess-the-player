@@ -16,7 +16,7 @@ const SearchPlayers = () => {
     <View style={styles.container}>
       <TextInput
         onChangeText={(text) => setSearchText(text.toUpperCase())}
-        placeholder="Buscar jugador"
+        placeholder="Search player"
         placeholderTextColor="#888"
         value={searchText}
         style={styles.input}

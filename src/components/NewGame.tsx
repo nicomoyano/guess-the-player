@@ -9,7 +9,7 @@ const NewGame = () => {
   return (
     <View style={styles.container}>
       <Pressable onPress={handleReset} style={styles.button}>
-        <Text style={styles.text}>Nueva partida</Text>
+        <Text style={styles.text}>New Game</Text>
       </Pressable>
     </View>
   );

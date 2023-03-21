@@ -43,7 +43,7 @@ const PlayerToGuessAge = ({ isCorrect, age }: Props) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>EDAD</Text>
+      <Text style={styles.title}>AGE</Text>
       <View style={styles.itemContainer}>
         {isCorrect ? (
           <Text style={styles.age}>{age}</Text>
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: 14,
+    fontSize: 10,
     fontWeight: '700',
     marginBottom: 8,
   },

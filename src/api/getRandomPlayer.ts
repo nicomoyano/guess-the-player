@@ -9,7 +9,7 @@ export const getRandomPlayer = (): Player => {
 
   const rawPlayer =
     filteredRawPlayers[Math.floor(Math.random() * filteredRawPlayers.length)];
-  const player = getPlayer(rawPlayer);
+  const player = getPlayer(rawPlayer!);
 
   return player;
 };

@@ -1,5 +1,4 @@
 import { View, StyleSheet, Text, Image } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 import React, { useContext } from 'react';
 import PlayerToGuessItem from './PlayerToGuessItem';
 import PlayerToGuessAge from './PlayerToGuessAge';
@@ -32,12 +31,12 @@ const PlayerToGuess = () => {
         <PlayerToGuessItem
           isCorrect={gameState!.correctItems.country}
           image={playerToGuess.country.image}
-          category="PAIS"
+          category="COUNTRY"
         />
         <PlayerToGuessItem
           isCorrect={gameState!.correctItems.league}
           image={playerToGuess.club.league.image}
-          category="LIGA"
+          category="LEAGUE"
         />
         <PlayerToGuessItem
           isCorrect={gameState!.correctItems.club}
@@ -47,7 +46,7 @@ const PlayerToGuess = () => {
         <PlayerToGuessItem
           isCorrect={gameState!.correctItems.position}
           image={playerToGuess.position.image}
-          category="POS"
+          category="POSITION"
         />
         <PlayerToGuessShirtNumber
           isCorrect={gameState!.correctItems.kitNumber}

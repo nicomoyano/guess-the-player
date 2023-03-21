@@ -16,7 +16,7 @@ type Props = {
 const PlayerToGuessRegion = ({ id, image, isCorrect }: Props) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>CONT</Text>
+      <Text style={styles.title}>REGION</Text>
       <View>
         <View style={styles.itemContainer}>
           {isCorrect ? (
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: 14,
+    fontSize: 10,
     fontWeight: '700',
     marginBottom: 8,
     color: 'black',
