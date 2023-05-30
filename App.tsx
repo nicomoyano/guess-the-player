@@ -28,11 +28,10 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    position: 'relative',
     flex: 1,
     alignItems: 'center',
     paddingHorizontal: 10,
-    paddingTop: Constants.statusBarHeight + 40,
+    paddingTop: Constants.statusBarHeight + 30,
   },
   background: {
     position: 'absolute',
@@ -40,6 +39,8 @@ const styles = StyleSheet.create({
     right: 0,
     top: 0,
     bottom: 0,
+    height: '100%',
+    width: '100%',
     zIndex: -1,
   },
   game: {
