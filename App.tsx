@@ -28,6 +28,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    position: 'relative',
     flex: 1,
     alignItems: 'center',
     paddingHorizontal: 10,
