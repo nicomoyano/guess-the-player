@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     flexWrap: 'wrap',
-    columnGap: 4,
+    columnGap: 1,
     rowGap: 10,
   },
 });
