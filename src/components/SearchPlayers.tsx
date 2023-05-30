@@ -39,14 +39,15 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderColor: 'gray',
-    borderRadius: 8,
+    borderColor: 'white',
+    borderRadius: 16,
     paddingHorizontal: 10,
-    paddingVertical: 5,
+    paddingVertical: 6,
     fontSize: 16,
+    color: 'white',
   },
   list: {
-    marginTop: 2,
+    marginTop: 6,
     overflow: 'hidden',
   },
 });

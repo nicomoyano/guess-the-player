@@ -35,7 +35,7 @@ const PlayerRow = ({ player, emptySearch }: Props) => {
         <Image source={player.image} style={styles.image} />
         <View style={styles.description}>
           <Text style={styles.name}>{player.name}</Text>
-          <Text style={styles.fullName}>{player.fullName}</Text>
+          {/* <Text style={styles.fullName}>{player.fullName}</Text> */}
         </View>
       </View>
     </Pressable>
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     cursor: 'pointer',
   },
   hover: {
-    backgroundColor: '#eee',
+    backgroundColor: 'rgba(0,0,0,0.5)',
   },
   info: {
     flexDirection: 'row',
@@ -61,18 +61,19 @@ const styles = StyleSheet.create({
     height: 30,
   },
   description: {
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
   },
   name: {
     paddingLeft: 8,
-    fontSize: 14,
+    fontSize: 16,
     textTransform: 'uppercase',
     cursor: 'pointer',
+    color: 'white',
   },
   fullName: {
     paddingLeft: 8,
     fontSize: 10,
-    color: 'gray',
+    color: 'white',
     cursor: 'pointer',
   },
 });

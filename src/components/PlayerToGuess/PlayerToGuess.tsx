@@ -12,9 +12,13 @@ const PlayerToGuess = () => {
 
   return (
     <View style={styles.container}>
-      {gameState.isGuessCorrect && (
-        <Image source={playerToGuess.image} style={styles.playerImage} />
-      )}
+      <Image
+        source={playerToGuess.image}
+        style={[
+          styles.playerImage,
+          gameState.isGuessCorrect === false && styles.hiddenPlayerImage,
+        ]}
+      />
       <Text style={styles.playerName}>
         {gameState?.isGuessCorrect ? playerToGuess.name : '? ? ?'}
       </Text>
@@ -59,11 +63,9 @@ const PlayerToGuess = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'lightgray',
-    borderRadius: 10,
+    borderRadius: 20,
     marginBottom: 20,
     marginTop: 20,
-    paddingVertical: 10,
     alignItems: 'center',
     cursor: 'default',
     userSelect: 'none',
@@ -80,6 +82,9 @@ const styles = StyleSheet.create({
     borderColor: '#eee',
     marginBottom: 4,
   },
+  hiddenPlayerImage: {
+    tintColor: 'black',
+  },
   playerName: {
     textTransform: 'uppercase',
     fontWeight: '700',
@@ -91,8 +96,10 @@ const styles = StyleSheet.create({
     width: '100%',
     marginTop: 20,
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-around',
     flexWrap: 'wrap',
+    columnGap: 4,
+    rowGap: 10,
   },
 });
 

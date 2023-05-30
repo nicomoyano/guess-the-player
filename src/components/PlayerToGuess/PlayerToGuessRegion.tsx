@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     fontSize: 10,
     fontWeight: '700',
     marginBottom: 8,
-    color: 'black',
+    color: 'white',
   },
   itemContainer: {
     width: 50,

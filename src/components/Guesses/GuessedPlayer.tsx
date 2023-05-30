@@ -6,6 +6,7 @@ import RegionItem from './PlayerItems/RegionItem';
 import ImageItem from './PlayerItems/ImageItem';
 import { useGameContext } from '../../store/useGameContext';
 import ShirtNumberItem from './PlayerItems/ShirtNumberItem';
+import { LinearGradient } from 'expo-linear-gradient';
 
 type Props = {
   player: Player;
@@ -23,6 +24,10 @@ const GuessedPlayer = ({ player, index }: Props) => {
 
   return (
     <View style={containerStyle}>
+      <LinearGradient
+        colors={['white', 'lightgray']}
+        style={styles.background}
+      />
       <Text style={styles.playerName}>{player.name}</Text>
       <View style={styles.itemsContainer}>
         <AgeItem playerAge={player.age} playerToGuessAge={playerToGuess.age} />
@@ -60,13 +65,22 @@ const GuessedPlayer = ({ player, index }: Props) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'lightgray',
     borderRadius: 10,
     marginVertical: 10,
     paddingVertical: 10,
     alignItems: 'center',
     cursor: 'default',
     userSelect: 'none',
+    position: 'relative',
+  },
+  background: {
+    borderRadius: 10,
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    zIndex: -1,
   },
   index: {
     fontSize: 16,
@@ -76,6 +90,7 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     fontWeight: '700',
     fontSize: 16,
+    color: 'black',
   },
   itemsContainer: {
     width: '100%',

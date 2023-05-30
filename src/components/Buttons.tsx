@@ -10,10 +10,10 @@ const Buttons = () => {
   return (
     <View style={styles.container}>
       <Pressable style={styles.button} onPress={handleHint}>
-        <Ionicons name="ios-bulb" size={18} color="white" />
+        <Ionicons name="ios-bulb" size={20} color="white" />
       </Pressable>
       <Pressable style={styles.button} onPress={handleReveal}>
-        <Ionicons name="flag" size={18} color="white" />
+        <Ionicons name="flag" size={20} color="white" />
       </Pressable>
     </View>
   );
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     marginLeft: 8,
   },
   button: {
-    backgroundColor: '#09f',
+    backgroundColor: '#009EEC',
     borderRadius: 32,
     width: 32,
     height: 32,
