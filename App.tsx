@@ -11,7 +11,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <LinearGradient
-        colors={['rgb(63,6,75)', 'rgb(16,0,16)']}
+        colors={['rgb(80,1,76)', 'rgb(16,0,16)']}
         style={styles.background}
       />
       <GameProvider>
