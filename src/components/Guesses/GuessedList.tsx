@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, RefreshControl, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import GuessedPlayer from './GuessedPlayer';
 import { useGameContext } from '../../store/useGameContext';
@@ -29,7 +29,13 @@ const GuessedList = () => {
           <GuessedPlayer key={player.id} index={index + 1} player={player} />
         )}
         style={styles.list}
-        refreshControl={null as any}
+        refreshControl={
+          <RefreshControl
+            refreshing={false}
+            onRefresh={() => {}}
+            enabled={false}
+          />
+        }
       />
     </View>
   );
