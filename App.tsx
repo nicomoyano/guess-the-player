@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import Constants from 'expo-constants';
-import { Dimensions, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import GameProvider from './src/store/GameProvider';
 import PlayerToGuess from './src/components/PlayerToGuess/PlayerToGuess';
 import GuessedList from './src/components/Guesses/GuessedList';
@@ -33,15 +33,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 10,
     paddingTop: Constants.statusBarHeight + 30,
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
   },
   background: {
     position: 'absolute',
-    top: 0,
     left: 0,
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
+    right: 0,
+    top: 0,
+    bottom: 0,
+    height: '100%',
+    width: '100%',
     zIndex: -1,
   },
   game: {

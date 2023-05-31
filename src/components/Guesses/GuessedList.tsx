@@ -29,6 +29,7 @@ const GuessedList = () => {
           <GuessedPlayer key={player.id} index={index + 1} player={player} />
         )}
         style={styles.list}
+        refreshControl={null as any}
       />
     </View>
   );
