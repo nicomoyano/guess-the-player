@@ -65,7 +65,7 @@ const GuessedPlayer = ({ player, index }: Props) => {
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 10,
+    borderRadius: 16,
     marginVertical: 10,
     paddingVertical: 10,
     alignItems: 'center',
