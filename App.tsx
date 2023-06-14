@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     paddingHorizontal: 10,
-    paddingTop: Constants.statusBarHeight + 30,
+    paddingTop: Constants.statusBarHeight + 40,
   },
   background: {
     position: 'absolute',
