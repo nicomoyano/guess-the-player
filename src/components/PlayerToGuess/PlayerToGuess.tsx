@@ -35,12 +35,12 @@ const PlayerToGuess = () => {
         <PlayerToGuessItem
           isCorrect={gameState!.correctItems.country}
           image={playerToGuess.country.image}
-          category="COUNTRY"
+          category="PAÍS"
         />
         <PlayerToGuessItem
           isCorrect={gameState!.correctItems.league}
           image={playerToGuess.club.league.image}
-          category="LEAGUE"
+          category="LIGA"
         />
         <PlayerToGuessItem
           isCorrect={gameState!.correctItems.club}
@@ -50,7 +50,7 @@ const PlayerToGuess = () => {
         <PlayerToGuessItem
           isCorrect={gameState!.correctItems.position}
           image={playerToGuess.position.image}
-          category="POSITION"
+          category="POSICIÓN"
         />
         <PlayerToGuessShirtNumber
           isCorrect={gameState!.correctItems.kitNumber}

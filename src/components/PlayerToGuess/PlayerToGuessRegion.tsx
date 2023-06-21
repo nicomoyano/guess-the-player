@@ -16,7 +16,7 @@ type Props = {
 const PlayerToGuessRegion = ({ id, image, isCorrect }: Props) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>REGION</Text>
+      <Text style={styles.title}>REGIÓN</Text>
       <View>
         <View style={styles.itemContainer}>
           {isCorrect ? (

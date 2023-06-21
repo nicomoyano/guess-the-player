@@ -43,7 +43,7 @@ const PlayerToGuessAge = ({ isCorrect, age }: Props) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>AGE</Text>
+      <Text style={styles.title}>EDAD</Text>
       <View style={styles.itemContainer}>
         {isCorrect ? (
           <Text style={styles.age}>{age}</Text>
