@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     cursor: 'default',
     userSelect: 'none',
+    paddingHorizontal: 10,
   },
   playerImage: {
     width: 100,

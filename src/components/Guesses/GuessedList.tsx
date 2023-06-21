@@ -11,7 +11,13 @@ const GuessedList = () => {
   return (
     <View>
       {playersGuessed.length > 0 && (
-        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            paddingHorizontal: 10,
+          }}
+        >
           <View style={{ flex: 1, height: 1, backgroundColor: 'lightgray' }} />
           <View>
             <Text

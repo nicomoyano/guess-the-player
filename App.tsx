@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     position: 'relative',
     flex: 1,
     alignItems: 'center',
-    paddingHorizontal: 10,
+    // paddingHorizontal: 10,
     paddingTop: Constants.statusBarHeight + 40,
   },
   background: {

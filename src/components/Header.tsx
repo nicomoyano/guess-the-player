@@ -8,7 +8,17 @@ const Header = () => {
   const { gameState } = useGameContext();
   const { isGuessCorrect } = gameState;
 
-  return <View>{isGuessCorrect ? <NewGame /> : <Inputs />}</View>;
+  return (
+    <View style={styles.container}>
+      {isGuessCorrect ? <NewGame /> : <Inputs />}
+    </View>
+  );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    paddingHorizontal: 10,
+  },
+});
 
 export default Header;

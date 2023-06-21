@@ -19,7 +19,11 @@ const GuessedPlayer = ({ player, index }: Props) => {
 
   const containerStyle = [
     styles.container,
-    player.id === playerToGuess.id && { borderColor: 'green', borderWidth: 4 },
+    player.id === playerToGuess.id && {
+      borderColor: 'green',
+      borderWidth: 5,
+      marginHorizontal: 0,
+    },
   ];
 
   return (
@@ -68,6 +72,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     marginVertical: 10,
     paddingVertical: 10,
+    marginHorizontal: 5,
     alignItems: 'center',
     cursor: 'default',
     userSelect: 'none',
@@ -96,9 +101,10 @@ const styles = StyleSheet.create({
     width: '100%',
     marginTop: 10,
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-around',
     flexWrap: 'wrap',
     rowGap: 8,
+    paddingHorizontal: 5,
   },
 });
 

@@ -14,7 +14,7 @@ const NewGame = () => {
           colors={['#00c6ff', '#0072ff']}
           style={styles.gradient}
         />
-        <Text style={styles.text}>New Game</Text>
+        <Text style={styles.text}>Nueva partida</Text>
       </Pressable>
     </View>
   );
