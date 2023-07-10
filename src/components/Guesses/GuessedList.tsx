@@ -16,6 +16,7 @@ const GuessedList = () => {
             flexDirection: 'row',
             alignItems: 'center',
             paddingHorizontal: 10,
+            marginTop: 40,
           }}
         >
           <View style={{ flex: 1, height: 1, backgroundColor: 'lightgray' }} />
@@ -23,7 +24,7 @@ const GuessedList = () => {
             <Text
               style={{ width: 80, textAlign: 'center', color: 'lightgray' }}
             >
-              GUESSES
+              INTENTOS
             </Text>
           </View>
           <View style={{ flex: 1, height: 1, backgroundColor: 'lightgray' }} />

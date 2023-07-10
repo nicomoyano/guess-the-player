@@ -65,7 +65,6 @@ const styles = StyleSheet.create({
   container: {
     borderRadius: 20,
     marginBottom: 20,
-    marginTop: 20,
     alignItems: 'center',
     cursor: 'default',
     userSelect: 'none',
@@ -97,7 +96,7 @@ const styles = StyleSheet.create({
     width: '100%',
     marginTop: 20,
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     flexWrap: 'wrap',
     columnGap: 1,
     rowGap: 10,

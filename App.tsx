@@ -16,8 +16,8 @@ export default function App() {
       />
       <GameProvider>
         <View style={styles.game}>
-          <Header />
           <PlayerToGuess />
+          <Header />
           <GuessedList />
         </View>
       </GameProvider>

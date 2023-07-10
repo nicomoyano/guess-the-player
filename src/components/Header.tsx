@@ -18,6 +18,7 @@ const Header = () => {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 10,
+    marginTop: 30,
   },
 });
 
