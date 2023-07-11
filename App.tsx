@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import Constants from 'expo-constants';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Image } from 'react-native';
 import GameProvider from './src/store/GameProvider';
 import PlayerToGuess from './src/components/PlayerToGuess/PlayerToGuess';
 import GuessedList from './src/components/Guesses/GuessedList';
@@ -13,6 +13,16 @@ export default function App() {
       <LinearGradient
         colors={['rgb(80,1,76)', 'rgb(16,0,16)']}
         style={styles.background}
+      />
+      <Image
+        source={require('./assets/logo.png')}
+        style={{
+          position: 'absolute',
+          bottom: 40,
+          width: 500,
+          height: 15,
+          resizeMode: 'contain',
+        }}
       />
       <GameProvider>
         <View style={styles.game}>
