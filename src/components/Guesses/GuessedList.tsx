@@ -16,7 +16,7 @@ const GuessedList = () => {
             flexDirection: 'row',
             alignItems: 'center',
             paddingHorizontal: 10,
-            marginTop: 40,
+            marginTop: 30,
           }}
         >
           <View style={{ flex: 1, height: 1, backgroundColor: 'lightgray' }} />

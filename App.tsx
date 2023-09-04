@@ -18,8 +18,8 @@ export default function App() {
         source={require('./assets/logo.png')}
         style={{
           position: 'absolute',
-          bottom: 40,
-          width: 500,
+          bottom: 25,
+          width: 300,
           height: 15,
           resizeMode: 'contain',
         }}
@@ -39,6 +39,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     position: 'relative',
+    width: '100vw',
     flex: 1,
     alignItems: 'center',
     // paddingHorizontal: 10,
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
     top: 0,
     bottom: 0,
     height: '100%',
-    width: '100%',
+    width: '100vw',
     zIndex: -1,
   },
   game: {

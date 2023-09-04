@@ -64,7 +64,6 @@ const PlayerToGuess = () => {
 const styles = StyleSheet.create({
   container: {
     borderRadius: 20,
-    marginBottom: 20,
     alignItems: 'center',
     cursor: 'default',
     userSelect: 'none',
